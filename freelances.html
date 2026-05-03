@@ -3,12 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AfriTalent - Contact</title>
+    <title>AfriTalent - Freelances</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3 fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="https://via.placeholder.com/120x40?text=AfriTalent" alt="Logo AfriTalent">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="freelances.html">Freelances</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3">
+                            <a class="btn btn-primary" href="#">Rejoindre AfriTalent</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 80px;">
+        <section class="container py-5">
+            <h1 class="fw-bold text-center mb-2">Catalogue de Freelances</h1>
+            <p class="text-center text-muted mb-5">Trouvez le talent parfait pour votre projet parmi +500 experts africains</p>
+
+            <!-- BARRE DE FILTRES -->
+            <div class="text-center mb-5" id="filtres">
+                <button class="btn btn-primary me-2 mb-2 filter-btn active" data-filter="all">Tous</button>
+                <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="dev">Développement</button>
+                <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="design">Design</button>
+                <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="marketing">Marketing</button>
+                <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="data">Data & IA</button>
+                <button class="btn btn-outline-primary me-2 mb-2 filter-btn" data-filter="redaction">Rédaction</button>
+            </div>
+
+            <!-- GRILLE DE PROFILS -->
+            <div class="row g-4" id="grilleFreelances">
+                <!-- 1 -->
+                <div class="col-lg-4 col-md-6 freelance-card" data-category="dev">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://i.pravatar.cc/400?img=11" class="card-img-top" alt="Awa Diop">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Awa Diop</h5>
+                            <p class="text-primary fw-semibold">Développeuse Full-Stack</p>
+                            <p class="card-text text-muted">Experte React & Node.js. +5 ans d'expérience en startups fintech.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="fw-bold">45 000 FCFA/h</span>
+                                <div class="text-warning"><i class="bi bi-star-fill"></i> 4.9</div>
+                            </div>
+                            <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="col-lg-4 col-md-6 freelance-card" data-category="design">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://i.pravatar.cc/400?img=32" class="card-img-top" alt="Mamadou Ba">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Mamadou Ba</h5>
+                            <p class="text-primary fw-semibold">Designer UI/UX</p>
+                            <p class="card-text text-muted">Création d'interfaces mobiles modernes. Figma & Adobe XD.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="fw-bold">35 000 FCFA/h</span>
+                                <div class="text-warning"><i class="bi bi-star-fill"></i> 5.0</div>
+                            </div>
+                            <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="col-lg-4 col-md-6 freelance-card" data-category="marketing">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://i.pravatar.cc/400?img=5" class="card-img-top" alt="Fatou Sow">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Fatou Sow</h5>
+                            <p class="text-primary fw-semibold">Experte Marketing Digital</p>
+                            <p class="card-text text-muted">Stratégie SEO/SEA. J'aide les PME à tripler leur trafic.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="fw-bold">30 000 FCFA/h</span>
+                                <div class="text-warning"><i class="bi bi-star-fill"></i> 4.8</div>
+                            </div>
+                            <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="col-lg-4 col-md-6 freelance-card" data-category="data">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://i.pravatar.cc/400?img=14" class="card-img-top" alt="Ousmane Ndiaye">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Ousmane Ndiaye</h5>
+                            <p class="text-primary fw-semibold">Data Scientist</p>
+                            <p class="card-text text-muted">Python, Machine Learning. Spécialiste en analyse prédictive.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="fw-bold">50 000 FCFA/h</span>
+                                <div class="text-warning"><i class="bi bi-star-fill"></i> 4.9</div>
+                            </div>
+                            <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="col-lg-4 col-md-6 freelance-card" data-category="redaction">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://i.pravatar.cc/400?img=20" class="card-img-top" alt="Khady Fall">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Khady Fall</h5>
+                            <p class="text-primary fw-semibold">Rédactrice Tech</p>
+                            <p class="card-text text-muted">Articles de blog & documentation technique FR/EN.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="fw-bold">25 000 FCFA/h</span>
+                                <div class="text-warning"><i class="bi bi-star-fill"></i> 4.7</div>
+                            </div>
+                            <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="col-lg-4 col-md-6 freelance-card" data-category="dev">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://i.pravatar.cc/400?img=15" class="card-img-top" alt="Ibrahima Sarr">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Ibrahima Sarr</h5>
+                            <p class="text-primary fw-semibold">DevOps Engineer</p>
+                            <p class="card-text text-muted">AWS, Docker, Kubernetes. CI/CD et infrastructure cloud.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="fw-bold">55 000 FCFA/h</span>
+                                <div class="text-warning"><i class="bi bi-star-fill"></i> 5.0</div>
+                            </div>
+                            <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="col-lg-4 col-md-6 freelance-card" data-category="design">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://i.pravatar.cc/400?img=26" class="card-img-top" alt="Aissatou Diallo">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Aissatou Diallo</h5>
+                            <p class="text-primary fw-semibold">Graphiste Branding</p>
+                            <p class="card-text text-muted">Logos & identités visuelles. +100 marques créées.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="fw-bold">28 000 FCFA/h</span>
+                                <div class="text-warning"><i class="bi bi-star-fill"></i> 4.8</div>
+                            </div>
+                            <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="col-lg-4 col-md-6 freelance-card" data-category="marketing">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://i.pravatar.cc/400?img=33" class="card-img-top" alt="Cheikh Diouf">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Cheikh Diouf</h5>
+                            <p class="text-primary fw-semibold">Community Manager</p>
+                            <p class="card-text text-muted">Gestion réseaux sociaux. Croissance organique garantie.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="fw-bold">22 000 FCFA/h</span>
+                                <div class="text-warning"><i class="bi bi-star-fill"></i> 4.6</div>
+                            </div>
+                            <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="col-lg-4 col-md-6 freelance-card" data-category="dev">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://i.pravatar.cc/400?img=8" class="card-img-top" alt="Mariama Camara">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Mariama Camara</h5>
+                            <p class="text-primary fw-semibold">Dev Mobile Flutter</p>
+                            <p class="card-text text-muted">Apps iOS/Android performantes. 15 apps publiées.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="fw-bold">40 000 FCFA/h</span>
+                                <div class="text-warning"><i class="bi bi-star-fill"></i> 4.9</div>
+                            </div>
+                            <a href="#" class="btn btn-primary w-100">Voir le profil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <img src="https://via.placeholder.com/120x40?text=AfriTalent" alt="Logo AfriTalent" class="mb-3">
+                    <p class="text-white-50">La plateforme qui connecte les meilleurs freelances d'Afrique aux entreprises du monde entier.</p>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <h6 class="fw-bold mb-3">LIENS UTILES</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Accueil</a></li>
+                        <li class="mb-2"><a href="freelances.html" class="text-white-50 text-decoration-none">Freelances</a></li>
+                        <li class="mb-2"><a href="tarifs.html" class="text-white-50 text-decoration-none">Tarifs</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">À propos</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center text-white-50">
+                <p class="mb-0">&copy; <span id="currentYear"></span> AfriTalent - Konate Fatimata. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
