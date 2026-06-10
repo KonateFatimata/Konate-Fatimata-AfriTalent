@@ -32,3 +32,33 @@ window.addEventListener('scroll', () => {
 backToTop?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      
+      // Animation compteur
+      if (entry.target.classList.contains('counter')) {
+        const target = +entry.target.dataset.target;
+        let count = 0;
+        const speed = 200; // plus c'est petit plus ça va vite
+        
+        const updateCount = () => {
+          count += target / speed;
+          if (count < target) {
+            entry.target.innerText = Math.ceil(count);
+            setTimeout(updateCount, 10);
+          } else {
+            entry.target.innerText = target;
+          }
+        };
+        updateCount();
+        observer.unobserve(entry.target);
+      }
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.section, .counter').forEach(el => observer.observe(el));
