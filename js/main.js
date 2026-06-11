@@ -62,3 +62,69 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 
 document.querySelectorAll('.section, .counter').forEach(el => observer.observe(el));
+
+
+
+const form = document.getElementById('contactForm');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    let isValid = true;
+    
+    const nom = document.getElementById('nom');
+    const prenom = document.getElementById('prenom');
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
+    
+    // Fonction pour afficher/cacher l’erreur Bootstrap
+    function validateField(input, condition, message) {
+        const feedback = input.parentElement.querySelector('.invalid-feedback');
+        if(!condition) {
+            input.classList.add('is-invalid');
+            if(feedback) feedback.textContent = message;
+            isValid = false;
+        } else {
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+        }
+    }
+    
+    // Validation
+    validateField(nom, nom.value.trim() !== '', 'Le nom est requis');
+    validateField(prenom, prenom.value.trim() !== '', 'Le prénom est requis');
+    
+    const emailRegex = /^\S+@\S+\.\S+$/;
+    validateField(email, emailRegex.test(email.value), 'Email invalide');
+    
+    validateField(message, message.value.trim().length >= 20, 'Message trop court, 20 caractères min');
+    
+    // Si tout est bon
+    if(isValid) {
+        alert('Message envoyé ! Notre équipe vous répond sous 24h');
+        form.reset();
+        form.querySelectorAll('.is-valid').forEach(el => el.classList.remove('is-valid'));
+    }
+});
+
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.freelance-card');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        const filter = this.getAttribute('data-filter');
+        
+        cards.forEach(card => {
+            if(filter === 'all' || card.getAttribute('data-categorie') === filter) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        filterBtns.forEach(b => b.classList.remove('btn-primary'));
+        filterBtns.forEach(b => b.classList.add('btn-outline-primary'));
+        this.classList.remove('btn-outline-primary');
+        this.classList.add('btn-primary');
+    });
+});
