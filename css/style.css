@@ -362,6 +362,12 @@ body {
   color: #0d6efd;
 }
 
+.hero div:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* BENTO GRID */
 .bento-section {
   padding: 80px 0;
@@ -511,4 +517,10 @@ html[data-theme="dark"] [class*="bg-"] {
 .section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+img[src*="AfriTalent"] {
+  display: block !important;
+  margin: 0 auto !important;
 }
